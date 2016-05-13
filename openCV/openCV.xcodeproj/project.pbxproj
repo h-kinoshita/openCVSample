@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		509AFA0F31AE7964FD00C1BB /* libPods-openCV.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB7B2A0C1B1CEB1EF39CFCD /* libPods-openCV.a */; };
+		539C2D5F1CE64D4F00929C13 /* haarcascade_frontalcatface.xml in Resources */ = {isa = PBXBuildFile; fileRef = 539C2D5D1CE64D4F00929C13 /* haarcascade_frontalcatface.xml */; };
+		539C2D601CE64D4F00929C13 /* haarcascade_frontalface_alt.xml in Resources */ = {isa = PBXBuildFile; fileRef = 539C2D5E1CE64D4F00929C13 /* haarcascade_frontalface_alt.xml */; };
 		53DDDDF61CE6076500FCCE7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DDDDF51CE6076500FCCE7C /* AppDelegate.swift */; };
 		53DDDDF81CE6076500FCCE7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DDDDF71CE6076500FCCE7C /* ViewController.swift */; };
 		53DDDDFB1CE6076500FCCE7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53DDDDF91CE6076500FCCE7C /* Main.storyboard */; };
@@ -18,6 +20,7 @@
 		53DDDE191CE6076500FCCE7C /* openCVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53DDDE181CE6076500FCCE7C /* openCVUITests.swift */; };
 		53E53E3D1CE63F3B002CC6FB /* CameraUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E53E3C1CE63F3B002CC6FB /* CameraUtil.swift */; };
 		53E53E3F1CE64490002CC6FB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E53E3E1CE64490002CC6FB /* AVFoundation.framework */; };
+		53E53E441CE64B2D002CC6FB /* Detector.mm in Sources */ = {isa = PBXBuildFile; fileRef = 53E53E431CE64B2D002CC6FB /* Detector.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		539C2D5D1CE64D4F00929C13 /* haarcascade_frontalcatface.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalcatface.xml; sourceTree = "<group>"; };
+		539C2D5E1CE64D4F00929C13 /* haarcascade_frontalface_alt.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt.xml; sourceTree = "<group>"; };
 		53DDDDF21CE6076400FCCE7C /* openCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = openCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53DDDDF51CE6076500FCCE7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53DDDDF71CE6076500FCCE7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +60,8 @@
 		53E53E3C1CE63F3B002CC6FB /* CameraUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraUtil.swift; sourceTree = "<group>"; };
 		53E53E3E1CE64490002CC6FB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		53E53E401CE6456B002CC6FB /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = opencv2.framework; path = Pods/OpenCV/opencv2.framework; sourceTree = "<group>"; };
+		53E53E421CE64B2C002CC6FB /* openCV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "openCV-Bridging-Header.h"; sourceTree = "<group>"; };
+		53E53E431CE64B2D002CC6FB /* Detector.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Detector.mm; sourceTree = "<group>"; };
 		ABB7B2A0C1B1CEB1EF39CFCD /* libPods-openCV.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-openCV.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC7882340D145F784B49FC8 /* Pods-openCV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openCV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-openCV/Pods-openCV.debug.xcconfig"; sourceTree = "<group>"; };
 		D8521024ADF582EE594B74E8 /* Pods-openCV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-openCV.release.xcconfig"; path = "Pods/Target Support Files/Pods-openCV/Pods-openCV.release.xcconfig"; sourceTree = "<group>"; };
@@ -100,12 +107,14 @@
 		53DDDDE91CE6076400FCCE7C = {
 			isa = PBXGroup;
 			children = (
+				53E53E431CE64B2D002CC6FB /* Detector.mm */,
 				53DDDDF41CE6076500FCCE7C /* openCV */,
 				53DDDE0C1CE6076500FCCE7C /* openCVTests */,
 				53DDDE171CE6076500FCCE7C /* openCVUITests */,
 				53DDDDF31CE6076400FCCE7C /* Products */,
 				E8F7C208D85EF386F4A8EB9B /* Pods */,
 				114B9596BBA41B66D1D03C46 /* Frameworks */,
+				53E53E421CE64B2C002CC6FB /* openCV-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -122,6 +131,8 @@
 		53DDDDF41CE6076500FCCE7C /* openCV */ = {
 			isa = PBXGroup;
 			children = (
+				539C2D5D1CE64D4F00929C13 /* haarcascade_frontalcatface.xml */,
+				539C2D5E1CE64D4F00929C13 /* haarcascade_frontalface_alt.xml */,
 				53DDDDF51CE6076500FCCE7C /* AppDelegate.swift */,
 				53DDDDF71CE6076500FCCE7C /* ViewController.swift */,
 				53E53E3C1CE63F3B002CC6FB /* CameraUtil.swift */,
@@ -268,7 +279,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				539C2D601CE64D4F00929C13 /* haarcascade_frontalface_alt.xml in Resources */,
 				53DDDE031CE6076500FCCE7C /* LaunchScreen.storyboard in Resources */,
+				539C2D5F1CE64D4F00929C13 /* haarcascade_frontalcatface.xml in Resources */,
 				53DDDE001CE6076500FCCE7C /* Assets.xcassets in Resources */,
 				53DDDDFB1CE6076500FCCE7C /* Main.storyboard in Resources */,
 			);
@@ -344,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				53DDDDF81CE6076500FCCE7C /* ViewController.swift in Sources */,
+				53E53E441CE64B2D002CC6FB /* Detector.mm in Sources */,
 				53DDDDF61CE6076500FCCE7C /* AppDelegate.swift in Sources */,
 				53E53E3D1CE63F3B002CC6FB /* CameraUtil.swift in Sources */,
 				53DDDDFE1CE6076500FCCE7C /* openCV.xcdatamodeld in Sources */,
@@ -491,6 +505,7 @@
 			baseConfigurationReference = BAC7882340D145F784B49FC8 /* Pods-openCV.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -500,6 +515,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.mebro.openCV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "openCV-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -508,6 +525,7 @@
 			baseConfigurationReference = D8521024ADF582EE594B74E8 /* Pods-openCV.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -517,6 +535,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.co.mebro.openCV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "openCV-Bridging-Header.h";
 			};
 			name = Release;
 		};

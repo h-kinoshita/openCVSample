@@ -19,15 +19,15 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     // カメラデバイス
     var myDevice: AVCaptureDevice!
     
+    let detector = Detector()
+    
     // 出力先
     var myOutput: AVCaptureVideoDataOutput!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("this")
         if initCamera() {
-            print("this place")
             // 撮影開始
             mySession.startRunning()
             
@@ -50,7 +50,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
         mySession.sessionPreset = AVCaptureSessionPresetMedium
         
         // バックカメラをmyDeviceに格納
-        if let device = findCamera(AVCaptureDevicePosition.Back) {
+        if let device = findCamera(AVCaptureDevicePosition.Front) {
             myDevice = device
         } else {
             print("カメラが見つかりませんでした")
@@ -121,7 +121,14 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     func captureOutput(captureOutput: AVCaptureOutput!, didOutputSampleBuffer sampleBuffer: CMSampleBuffer!, fromConnection connection: AVCaptureConnection!)
     {
         dispatch_sync(dispatch_get_main_queue(), {
-            self.imageView.image = CameraUtil.imageFromSampleBuffer(sampleBuffer)
+            
+            let image = CameraUtil.imageFromSampleBuffer(sampleBuffer)
+            
+            // 顔認識
+            let faceImage = self.detector.recognizeFace(image)
+            
+            // 表示
+            self.imageView.image = faceImage
             
         })
     }
